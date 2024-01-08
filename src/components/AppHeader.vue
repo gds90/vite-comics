@@ -77,19 +77,29 @@ export default {
         </div>
     </header>
 </template>
-<style>
+<style lang="scss" scoped>
+@use '../styles/partials/variables' as *;
+
 ul {
     display: flex;
     list-style: none;
+    height: 100%;
+    align-items: center;
+
 }
 
 a {
     padding: 1rem;
     text-decoration: none;
-    font-size: 14px;
-    align-items: center;
-    color: black;
+    font-size: 12px;
+    font-weight: 600;
+    color: $secondary_color;
     display: flex;
+
+    &.active,
+    &:hover {
+        color: $brand_primary;
+    }
 }
 
 .containerHeader {

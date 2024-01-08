@@ -12,6 +12,6 @@ export default {
   <AppHeader />
   <AppMain />
 </template>
-<style lang="">
-  
+<style lang="scss">
+@use './styles/generals.scss'
 </style>
