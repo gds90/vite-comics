@@ -27,6 +27,11 @@ export default {
                 }
             ]
         }
+    },
+    methods: {
+        getImagePath(imgPath) {
+            return new URL(imgPath, import.meta.url).href;
+        }
     }
 }
 </script>
@@ -53,7 +58,7 @@ export default {
                     <ul>
                         <li v-for="(link, index) in links" :key="index">
                             <a :href="link.url">
-                                <img :src="link.img" alt="/">
+                                <img :src="getImagePath(link.img)" alt="/">
                             </a>
                         </li>
                     </ul>
