@@ -6,23 +6,23 @@ export default {
         return {
             links: [
                 {
-                    img: '../assets/img/footer-facebook.png',
+                    img: 'footer-facebook.png',
                     url: '#',
                 },
                 {
-                    img: '../assets/img/footer-twitter.png',
+                    img: 'footer-twitter.png',
                     url: '#',
                 },
                 {
-                    img: '../assets/img/footer-youtube.png',
+                    img: 'footer-youtube.png',
                     url: '#',
                 },
                 {
-                    img: '../assets/img/footer-pinterest.png',
+                    img: 'footer-pinterest.png',
                     url: '#',
                 },
                 {
-                    img: '../assets/img/footer-periscope.png',
+                    img: 'footer-periscope.png',
                     url: '#',
                 }
             ]
@@ -58,7 +58,7 @@ export default {
                     <ul>
                         <li v-for="(link, index) in links" :key="index">
                             <a :href="link.url">
-                                <img :src="getImagePath(link.img)" alt="/">
+                                <img :src="getImagePath(`../assets/img/${link.img}`)" alt="/">
                             </a>
                         </li>
                     </ul>
