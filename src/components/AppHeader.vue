@@ -61,7 +61,7 @@ export default {
 </script>
 <template lang="">
     <header>
-        <div class="container">
+        <div class="containerHeader">
             <a href="#" class="logo">
                 <img src="../assets/img/dc-logo.png">
             </a>
@@ -90,5 +90,16 @@ a {
     align-items: center;
     color: black;
     display: flex;
+}
+
+.containerHeader {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+img {
+    max-width: 80%;
 }
 </style>
