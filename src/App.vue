@@ -7,9 +7,7 @@ export default {
 }
 </script>
 <template lang="">
-  <div>
-    <AppHeader />
-  </div>
+  <AppHeader />
 </template>
 <style lang="">
   
