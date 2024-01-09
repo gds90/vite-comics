@@ -130,7 +130,6 @@ main {
             border: 0;
             padding: 10px 50px;
             margin: 20px;
-            cursor: pointer;
         }
     }
 
@@ -146,7 +145,12 @@ main {
             padding: 10px 50px;
             margin: 0px 0px 20px 0px;
             cursor: pointer;
+
+            &:hover {
+                background-color: rgb(20, 74, 160);
+            }
         }
+
     }
 }
 </style>
