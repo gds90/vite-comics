@@ -3,6 +3,7 @@ export default {
     name: 'AppHeader',
     data() {
         return {
+            // Array contenente i link del nav
             links: [
                 {
                     label: 'CHARACTERS',
@@ -62,54 +63,75 @@ export default {
 <template lang="">
     <header>
         <div class="containerHeader">
-            <a href="#" class="logo">
-                <img src="../assets/img/dc-logo.png">
-            </a>
-            <nav>
-                <ul>
-                    <li v-for="(link, index) in links" :key="index">
-                        <a :class="link.active ? 'active' : ''" :href="link.url">
-                            {{link.label}}
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <div class="navbar">
+                <!-- Logo DC -->
+                <a href="#" class="logo">
+                    <img src="../assets/img/dc-logo.png" alt="DC Comics">
+                </a>
+                <!-- Nav  -->
+                <nav>
+                    <ul>
+                        <!-- V-For per ciclare l'array dei link  -->
+                        <li v-for="(link, index) in links" :key="index">
+                            <a :class="link.active ? 'active' : ''" :href="link.url">
+                                {{link.label}}
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 </template>
 <style lang="scss" scoped>
 @use '../styles/partials/variables' as *;
 
-ul {
-    display: flex;
-    list-style: none;
-    height: 100%;
-    align-items: center;
-
-}
-
-a {
-    padding: 1rem;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 600;
-    color: $secondary_color;
-    display: flex;
-
-    &.active,
-    &:hover {
-        color: $brand_primary;
-    }
-}
 
 .containerHeader {
-    display: flex;
     max-width: 1200px;
     margin: 0 auto;
-    justify-content: space-between;
-}
 
-img {
-    max-width: 100%;
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        height: 100%;
+        align-items: center;
+    }
+
+    a {
+        padding: 1rem;
+        font-size: 12px;
+        font-weight: 600;
+        color: $secondary_color;
+        position: relative;
+
+        &.active,
+        &:hover {
+            color: $brand_primary;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 15px;
+                width: calc(100% - 30px);
+                height: 5px;
+                background-color: $brand_primary;
+            }
+        }
+
+
+        img {
+            max-width: 80%;
+        }
+    }
+
 }
 </style>
+
