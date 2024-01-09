@@ -144,7 +144,7 @@ main {
             font-weight: 600;
             border: 0;
             padding: 10px 50px;
-            margin: 20px;
+            margin: 0px 0px 20px 0px;
             cursor: pointer;
         }
     }
