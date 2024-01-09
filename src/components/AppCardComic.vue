@@ -26,6 +26,15 @@ export default {
         object-position: top;
         width: 180px;
         height: 180px;
+        opacity: 0.7;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin-bottom: 5px;
+
+        &:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
     }
 }
 
