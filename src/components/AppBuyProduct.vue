@@ -85,7 +85,8 @@ export default {
 
 .label {
     color: white;
-    font-size: 12px;
+    font-size: 13px;
     margin: 15px;
+    font-weight: 400;
 }
 </style>

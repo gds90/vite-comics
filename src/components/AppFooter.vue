@@ -79,7 +79,7 @@ export default {
 
 .footerDown {
     background-color: $secondary_color;
-    height: 100px;
+    height: 110px;
     position: relative;
     z-index: 99999;
 
