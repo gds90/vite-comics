@@ -1,6 +1,10 @@
 <script>
+import AppCardComic from './AppCardComic.vue';
 export default {
     name: 'AppMain',
+    components: {
+        AppCardComic
+    },
     data() {
         return {
             comics: [
@@ -84,8 +88,15 @@ export default {
 <template lang="">
     <main>
         <div class="containerMain comics">
-            <!-- tramite un v-for andremo ad inserire i fumetti con immagine e titolo  -->
-            <div></div>
+            <div id="currentSeries">
+                <button id="currentSeriesBtn">CURRENT SERIES</button>
+            </div>
+            <div class="cards">
+                <AppCardComic v-for="comic, index in comics" :key="index" :comic="comic"/>
+            </div>
+        </div>
+        <div id="loadMoreContainer">
+            <button id="loadMoreBtn">LOAD MORE</button>
         </div>
     </main>
 </template>
@@ -93,14 +104,49 @@ export default {
 @use '../styles/partials/variables' as *;
 
 main {
-    background-color: black;
+    background-color: rgb(37, 37, 37);
 
     .containerMain {
         max-width: 1200px;
         margin: 0 auto;
-        height: 150px;
         color: white;
         font-weight: 800;
+        position: relative;
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        #currentSeriesBtn {
+            position: absolute;
+            top: -7%;
+            left: -20px;
+            background-color: $brand_primary;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            border: 0;
+            padding: 10px 50px;
+            margin: 20px;
+            cursor: pointer;
+        }
+    }
+
+    #loadMoreContainer {
+        text-align: center;
+
+        #loadMoreBtn {
+            background-color: $brand_primary;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            border: 0;
+            padding: 10px 50px;
+            margin: 20px;
+            cursor: pointer;
+        }
     }
 }
 </style>
