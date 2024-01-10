@@ -24,8 +24,8 @@ export default {
     img {
         object-fit: cover;
         object-position: top;
-        width: 180px;
-        height: 180px;
+        max-width: 180px;
+        max-height: 180px;
         opacity: 0.7;
         cursor: pointer;
         transition: all 0.3s;
